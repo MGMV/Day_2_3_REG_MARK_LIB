@@ -1,0 +1,17 @@
+ [TestMethod()]
+public void GetCombinationsCountInRange_TwoNumber_ReturnInt()
+{
+    var number = RegMark.GetCombinationsCountInRange("T998YX26", "T001XA26");
+
+    var actual = 1;
+    Assert.AreEqual(actual, number);
+}
+
+[TestMethod()]
+public void GetCombinationsCountInRange_AllNumberInSerials_ReturnInt()
+{
+    var number = RegMark.GetCombinationsCountInRange("T001YX26", "T999YX26");
+
+    var actual = 997;
+    Assert.AreEqual(actual, number);
+}
