@@ -1,17 +1,53 @@
  [TestMethod()]
-public void GetCombinationsCountInRange_TwoNumber_ReturnInt()
-{
-    var number = RegMark.GetCombinationsCountInRange("T998YX26", "T001XA26");
+        public void GetCombinationsCountInRange_TwoNumber_ReturnInt()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T998YX26", "T001XA26");
 
-    var actual = 1;
-    Assert.AreEqual(actual, number);
-}
+            var actual = 1;
+            Assert.AreEqual(actual, number);
+        }
 
-[TestMethod()]
-public void GetCombinationsCountInRange_AllNumberInSerials_ReturnInt()
-{
-    var number = RegMark.GetCombinationsCountInRange("T001YX26", "T999YX26");
+        [TestMethod()]
+        public void GetCombinationsCountInRange_AllNumberInSerials_ReturnInt()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T001YX26", "T999YX26");
 
-    var actual = 997;
-    Assert.AreEqual(actual, number);
-}
+            var actual = 997;
+            Assert.AreEqual(actual, number);
+        }
+
+        [TestMethod()]
+        public void GetCombinationsCountInRange_ZeroNumber_ReturnZero()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T999YX26", "T001XA26");
+
+            var actual = 0;
+            Assert.AreEqual(actual, number);
+        }
+
+        [TestMethod()]
+        public void GetCombinationsCountInRange_ZeroNumberReturn_ReturnZero()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T001XA26", "T999YX26");
+
+            var actual = 0;
+            Assert.AreEqual(actual, number);
+        }
+
+        [TestMethod()]
+        public void GetCombinationsCountInRange_HundredNumber_ReturnInt()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T001XA26", "T102XA26");
+
+            var actual = 100;
+            Assert.AreEqual(actual, number);
+        }
+
+        [TestMethod()]
+        public void GetCombinationsCountInRange_HundredNumberReverse_ReturnInt()
+        {
+            var number = RegMark.GetCombinationsCountInRange("T102XA26", "T001XA26");
+
+            var actual = 100;
+            Assert.AreEqual(actual, number);
+        }
